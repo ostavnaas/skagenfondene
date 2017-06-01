@@ -45,20 +45,20 @@ class skagen:
         return self.fond['investment']
 
     def printOut(self):
-        print 'Fond {}'.format(self.fond['fond'])
-        print 'Owner {}'.format(self.fond['owner'])
-        print 'Investment date: {}'.format(self.fond['date'])
-        print 'Investment: ', self.fond['investment']
-        print 'Value: {0:.0f}'.format(self.marked_value_share)
-        print 'Return: {0:.0f}'.format(self.return_value)
-        print 'Return rate {0:.4f}%'.format(self.return_rate)
-        print ''
+        print('Fond {}'.format(self.fond['fond']))
+        print('Owner {}'.format(self.fond['owner']))
+        print('Investment date: {}'.format(self.fond['date']))
+        print('Investment: ', self.fond['investment'])
+        print('Value: {0:.0f}'.format(self.marked_value_share))
+        print('Return: {0:.0f}'.format(self.return_value))
+        print('Return rate {0:.4f}%'.format(self.return_rate))
+        print('')
 
 
 def readFromCSV():
     pwd = os.path.dirname(os.path.realpath(__file__))
     csvfile = '{}/fonds.csv'.format(pwd)
-    with open(csvfile, 'rb') as csvfile:
+    with open(csvfile, 'rt') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
         for row in reader:
             yield row
@@ -83,10 +83,10 @@ for r in k:
 
 for i in total.keys():
     avkastning = (((total[i] - investment[i]) / investment[i]) * 100)
-    print '-'*40
-    print 'Eier: {}'.format(i)
-    print 'Investering: {:,} NOK'.format(investment[i])
-    print 'avkastning: {0:,.0f} NOK'.format(total[i] - investment[i])
-    print 'Total: {0:,.0f} NOK'.format(total[i])
-    print 'Avkastning {0:.3}%'.format(avkastning)
-    print ''
+    print('-'*40)
+    print('Eier: {}'.format(i))
+    print('Investering: {:,} NOK'.format(investment[i]))
+    print('avkastning: {0:,.0f} NOK'.format(total[i] - investment[i]))
+    print('Total: {0:,.0f} NOK'.format(total[i]))
+    print('Avkastning {0:.3}%'.format(avkastning))
+    print('')
