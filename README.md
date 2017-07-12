@@ -1,4 +1,4 @@
-This is an unofficial script to see the current value of your fund from Skagenfondene.no
+This is an unofficial script to see the current value of your fund from Skagenfondene.no.
 Currently only supporting Skagen Global, Vekst og Kon-Tiki.
 
 Example output:
